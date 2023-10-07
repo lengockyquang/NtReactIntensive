@@ -1,3 +1,29 @@
+.product-list{
+  padding: 0px 20px;
+  .product-item{
+    padding: 0px 5px;
+  }
+  display: flex;
+}
+
+.features {
+  margin-top: 10px;
+  padding: 50px;
+}
+
+.shop-navbar {
+  padding: 5px;
+}
+
+.block {
+  h2 {
+    text-align: center;
+    letter-spacing: 5px;
+    padding-top: 50px;
+    font-size: 22px;
+  }
+}
+
 .App {
   text-align: center;
 }
@@ -32,6 +58,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
