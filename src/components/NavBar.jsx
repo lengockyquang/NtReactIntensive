@@ -10,6 +10,7 @@ import Login from './Login';
 import ApplicationModal from './ApplicationModal';
 import Cart from './Cart';
 import { Button } from 'react-bootstrap';
+import ProductList from './ProductList';
 
 function NavBar() {
   const identityInfo = useSelector(identitySelector);
@@ -43,8 +44,8 @@ function NavBar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <a className="nav-item nav-link active" href="#">Home</a>
-            <a className="nav-item nav-link" href="#" onClick={() => navigate("/")}>Shop</a>
+            <a className="nav-item nav-link active" href="#" onClick={() => navigate("/")}>Home</a>
+            <a className="nav-item nav-link" href="#" onClick={() => navigate("/shop")}>Shop</a>
             <a className="nav-item nav-link" href="#" onClick={() => navigate("/")}>About</a>
           </div>
         </div>
@@ -73,6 +74,7 @@ function NavBar() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/shop" element={<ProductList />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ApplicationModal

@@ -1,0 +1,137 @@
+{
+    "data": [
+        {
+          "id": 0,
+          "name": "Product 0",
+          "price": 3362.78,
+          "isSale": false,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/80x.png"
+        },
+        {
+          "id": 1,
+          "name": "Product 1",
+          "price": 3955.71,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/92xi.png"
+        },
+        {
+          "id": 2,
+          "name": "Product 2",
+          "price": 2151.52,
+          "isSale": false,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/92xi.png"
+        },
+        {
+          "id": 3,
+          "name": "Product 3",
+          "price": 2338.51,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/kale.png"
+        },
+        {
+          "id": 4,
+          "name": "Product 4",
+          "price": 3352.25,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/80x.png"
+        },
+        {
+          "id": 5,
+          "name": "Product 5",
+          "price": 2009.85,
+          "isSale": false,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/80x.png"
+        },
+        {
+          "id": 6,
+          "name": "Product 6",
+          "price": 2309.46,
+          "isSale": false,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/92xi.png"
+        },
+        {
+          "id": 7,
+          "name": "Product 7",
+          "price": 3094.83,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/kale.png"
+        },
+        {
+          "id": 8,
+          "name": "Product 8",
+          "price": 1135.11,
+          "isSale": false,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/kale.png"
+        },
+        {
+          "id": 9,
+          "name": "Product 9",
+          "price": 1719.32,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/kale.png"
+        },
+        {
+          "id": 10,
+          "name": "Product 10",
+          "price": 2699.06,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/kale.png"
+        },
+        {
+          "id": 11,
+          "name": "Product 11",
+          "price": 2209.98,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/kale.png"
+        },
+        {
+          "id": 12,
+          "name": "Product 12",
+          "price": 3874.22,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/80x.png"
+        },
+        {
+          "id": 13,
+          "name": "Product 13",
+          "price": 3883.18,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/92xi.png"
+        },
+        {
+          "id": 14,
+          "name": "Product 14",
+          "price": 3235.7,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/kale.png"
+        },
+        {
+          "id": 15,
+          "name": "Product 15",
+          "price": 2505.05,
+          "isSale": false,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/92xi.png"
+        },
+        {
+          "id": 16,
+          "name": "Product 16",
+          "price": 1125.45,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/80x.png"
+        },
+        {
+          "id": 17,
+          "name": "Product 17",
+          "price": 1271.01,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/80x.png"
+        },
+        {
+          "id": 18,
+          "name": "Product 18",
+          "price": 1956.58,
+          "isSale": true,
+          "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/92xi.png"
+        }
+      ]
+}
