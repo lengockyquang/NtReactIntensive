@@ -19,6 +19,7 @@ const ApplicationModal = React.forwardRef((props, ref) => {
             onCancel={onClose}
             maskClosable={props.maskClosable}
             footer={null}
+            width={props.width}
         >
             {props.content}
         </Modal>

@@ -1,6 +1,5 @@
-import { notification, Table } from 'antd';
-import _ from 'lodash';
-import { useEffect, useState } from 'react';
+import React from 'react'
+import {  Table } from 'antd';
 
 function useTable(props) {
     
@@ -8,6 +7,8 @@ function useTable(props) {
         return (
             <div className='table-wrapper'>
                 <Table 
+                    scroll={{y: 100}}
+                    size='small'
                     pagination={props.pagination} 
                     dataSource={props.data} 
                     columns={props.columns} 

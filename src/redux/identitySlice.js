@@ -2,7 +2,13 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     isAuthenticated: false,
-    userName: 'None'
+    userName: 'None',
+    firstName: 'None',
+    lastName: 'None',
+    address: "None",
+    city: "None",
+    province: "None",
+    phoneNumber: "None"
 }
 
 export const identitySlice = createSlice({

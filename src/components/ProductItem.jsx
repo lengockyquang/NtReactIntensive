@@ -1,17 +1,29 @@
 import React from 'react'
 import { setItem } from '../redux/shoppingCartSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import {identitySelector} from '../redux/selector';
+import { notification } from 'antd';
 
 function ProductItem(props) {
   const defaultThumbnail = "https://dummyimage.com/450x300/dee2e6/6c757d.jpg";
   const dispatch = useDispatch();
+  const identityInfo = useSelector(identitySelector);
 
   const addToCart = () => {
-    dispatch(setItem({
-      id: props.id,
-      name: props.name,
-      price: props.price 
-    }))
+    if(identityInfo.isAuthenticated === false)
+    {
+        notification.error({
+          message:"Alert",
+          description:"Please login to use this feature."
+        })
+    }
+    else{
+      dispatch(setItem({
+        id: props.id,
+        name: props.name,
+        price: props.price 
+      }))
+    }
   }
 
 

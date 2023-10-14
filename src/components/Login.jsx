@@ -18,7 +18,7 @@ function Login() {
     else {
       notification.error({
         message: 'Alert',
-        description: 'Error occurred!'
+        description: 'Error occured!'
       })
     }
   }

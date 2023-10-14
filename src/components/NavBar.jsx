@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { refresh } from '../redux/shoppingCartSlice';
 import { identitySelector, shoppingCartSelector } from '../redux/selector';
@@ -9,7 +9,6 @@ import Home from './Home';
 import Login from './Login';
 import ApplicationModal from './ApplicationModal';
 import Cart from './Cart';
-import { Button } from 'react-bootstrap';
 import ProductList from './ProductList';
 
 function NavBar() {
@@ -17,7 +16,6 @@ function NavBar() {
   const shoppingCart = useSelector(shoppingCartSelector);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [cartItems, setCartItems] = useState(shoppingCart.cartItems);
   const cartModalRef = useRef(null);
 
   useEffect(() => {
@@ -78,10 +76,12 @@ function NavBar() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ApplicationModal
+        key={"cartModal"}
         ref={cartModalRef}
-        title='Your cart items'
+        title='Checkout'
         content={<Cart />}
         maskClosable={false}
+        width={1000}
       />
     </div>
   )
