@@ -2,13 +2,15 @@ import React from "react";
 import { shoppingCartSelector, identitySelector } from "../redux/selector";
 import { useDispatch, useSelector } from "react-redux";
 import useTable from "../hooks/useTable";
-import { Button, Form, Input, InputNumber, Select, Space, Table } from "antd";
+import { Button, Form, Input, InputNumber, Select, Space, Table, notification, message } from "antd";
 import { removeItem } from "../redux/shoppingCartSlice";
 import cityProvince from '../data/city-province.json';
 import CartSummary from "./CartSummary";
+import { clear } from '../redux/shoppingCartSlice';
 
 function Cart(props) {
   const [form] = Form.useForm();
+  const [messageApi, contextHolder] = message.useMessage();
   const shoppingCart = useSelector(shoppingCartSelector);
   const identityInfo = useSelector(identitySelector);
   const dispatch = useDispatch();
@@ -21,8 +23,18 @@ function Cart(props) {
   };
 
   const onSubmit = (values) => {
-    console.log(values);
-    
+    // generate order id
+    if(values.cardNumber === "123456789")
+    {
+      messageApi.success("Payment approved!");
+      dispatch(clear());
+      // render checkout success content
+      // allow user to leave review by star
+      // send the star and order id to backend 
+    }
+    else{
+      messageApi.error("Payment declined!");
+    }
   };
 
   const [renderTable] = useTable({
@@ -73,8 +85,24 @@ function Cart(props) {
       );
     },
   });
+
+  if(shoppingCart.cartItems.length === 0)
+  {
+    return (
+      <div className="cart" style={{textAlign:"center"}}>
+          <h5>Thank you for your order.</h5>
+          <hr/>
+          <div style={{fontWeight: 700, fontSize: 20}}>
+            <p>We hope this package brightens your day!</p>
+            <p>If you love your purchase, please let us know by leave a review</p>
+          </div>
+      </div>
+    )
+  }
+
   return (
     <div className="cart">
+      {contextHolder}
       <Form
         form={form}
         name="basic"
@@ -87,7 +115,6 @@ function Cart(props) {
       >
         <div style={{ display: "flex" }}>
           <div className="shipping-info" style={{ flex: 2 }}>
-
             <Form.Item
               label="First name"
               name="firstName"
