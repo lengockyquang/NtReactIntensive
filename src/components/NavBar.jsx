@@ -10,6 +10,10 @@ import Login from './Login';
 import ApplicationModal from './ApplicationModal';
 import Cart from './Cart';
 import ProductList from './ProductList';
+import { Button, Dropdown } from 'antd';
+import { logout } from '../redux/identitySlice';
+
+
 
 function NavBar() {
   const identityInfo = useSelector(identitySelector);
@@ -33,6 +37,28 @@ function NavBar() {
     cartModalRef.current.onOpen();
   }
 
+  const onLogout = () =>{
+    dispatch(logout());
+  }
+
+  const items = [
+    {
+      key: '1',
+      label: (
+        <a onClick={onLogout} href="#" style={{ textDecoration: 'none' }}>
+          Logout
+        </a>
+      ),
+    },
+    {
+      key: '2',
+      label: (
+        <a href="#" style={{ textDecoration: 'none' }}>
+          Profile
+        </a>
+      ),
+    }
+  ];
   return (
     <div className='shop-navbar'>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,7 +82,11 @@ function NavBar() {
                     <a className="nav-link" href="#" onClick={onOpenCartModal} >Cart({shoppingCart.cartItems.length})</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">Hello {identityInfo.userName}</a>
+                    <Dropdown menu={{ items }} placement="bottomLeft">
+                      <a className="nav-link" href="#">Hello {identityInfo.userName}</a>
+                      {/* <Button>Hello {identityInfo.userName}</Button> */}
+                    </Dropdown>
+                    <a className="nav-link" href="#"></a>
                   </li>
                 </React.Fragment>
               ) : (

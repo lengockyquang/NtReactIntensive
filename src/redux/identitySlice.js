@@ -18,11 +18,21 @@ export const identitySlice = createSlice({
         setAuth: (state, action) =>{
             state.isAuthenticated = action.payload.isAuthenticated;
             state.userName = action.payload.userName;
+        },
+        logout : (state, action)=>{
+            state.isAuthenticated = false;
+            state.userName= 'None';
+            state.firstName= 'None';
+            state.lastName= 'None';
+            state.address= "None";
+            state.city= "None";
+            state.province= "None";
+            state.phoneNumber= "None";
         }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setAuth } = identitySlice.actions
+export const { setAuth, logout } = identitySlice.actions
 
 export default identitySlice.reducer
