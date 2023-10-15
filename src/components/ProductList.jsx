@@ -1,13 +1,19 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import ProductItem from './ProductItem'
-import products from '../data/products.json';
 import _ from 'lodash';
+import { loadProducts } from '../services/loadProducts';
 
 function ProductList() {
+  const [data, setData] = useState([]);
+  useEffect(()=>{
+    loadProducts().then(response =>{
+      setData(response);
+    });
+  });
   return (
     <div className='product-list' style={{flexDirection:'column'}}>
         {
-          _.map(products.data, (item, index) => {
+          _.map(data, (item, index) => {
             return (
               <ProductItem
                   id={index}

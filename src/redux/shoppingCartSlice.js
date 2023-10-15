@@ -10,7 +10,19 @@ export const shoppingCartSlice = createSlice({
     initialState,
     reducers: {
         setItem: (state, action) =>{
-            state.cartItems = [...state.cartItems, action.payload];
+            let currentCartItems = [...state.cartItems];
+            let isCurrentCartContainsNewItem = _.filter(currentCartItems,item => item.id === action.payload.id);
+            if(isCurrentCartContainsNewItem.length)
+            {
+                state.cartItems = [
+                    ...currentCartItems.filter(item => item.id !== action.payload.id),
+                    {...isCurrentCartContainsNewItem[0], unit: isCurrentCartContainsNewItem[0].unit + 1}
+                ]
+            }
+            else{
+                state.cartItems = [...state.cartItems, action.payload];
+            }
+            
             localStorage.setItem("cartItems", JSON.stringify({
                 data: [...state.cartItems]
             }));

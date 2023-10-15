@@ -21,7 +21,8 @@ function ProductItem(props) {
       dispatch(setItem({
         id: props.id,
         name: props.name,
-        price: props.price 
+        price: props.price,
+        unit: 1 
       }))
     }
   }
