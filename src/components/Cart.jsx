@@ -2,7 +2,7 @@ import React from "react";
 import { shoppingCartSelector, identitySelector } from "../redux/selector";
 import { useDispatch, useSelector } from "react-redux";
 import useTable from "../hooks/useTable";
-import { Button, Form, Input, InputNumber, Select, Table } from "antd";
+import { Button, Form, Input, InputNumber, Select, Space, Table } from "antd";
 import { removeItem } from "../redux/shoppingCartSlice";
 import cityProvince from '../data/city-province.json';
 import CartSummary from "./CartSummary";
@@ -20,8 +20,9 @@ function Cart(props) {
     form.submit();
   };
 
-  const onSubmit = () => {
-    console.log("submit");
+  const onSubmit = (values) => {
+    console.log(values);
+    
   };
 
   const [renderTable] = useTable({
@@ -143,22 +144,33 @@ function Cart(props) {
                 name="cardNumber"
                 rules={[{ required: true, message: "Please input card number!" }]}
               >
-                <InputNumber size="small" style={{ width: 200 }} />
+                <Input size="small" style={{ width: 200 }} />
               </Form.Item>
-              <Form.Item
-                label="Expiry"
-                name="expiry"
-                rules={[{ required: true, message: "Please input card expiry info!" }]}
-              >
-                <InputNumber name="month" placeholder="MM" size="small" style={{ width: 50 }} min={1} max={12}/>
-                <InputNumber name="year" placeholder="YY" size="small" style={{ width: 50 }} min={1} max={99} />
+              <Form.Item label="Expiry">
+                <Space.Compact>
+                  <Form.Item
+                    noStyle
+                    name={["expiry","month"]}
+                    rules={[{ required: true, message: "Please input card expiry info!" }]}
+                  >
+                    <InputNumber name="month" placeholder="MM" size="small" style={{ width: 50 }} min={1} max={12}/>
+                  </Form.Item>
+                  <Form.Item
+                    noStyle
+                    name={["expiry","year"]}
+                    rules={[{ required: true, message: "Please input card expiry info!" }]}
+                  >
+                    <InputNumber name="year" placeholder="YY" size="small" style={{ width: 50 }} min={1} max={99} />
+                  </Form.Item>
+                </Space.Compact>
               </Form.Item>
+              
               <Form.Item
                 label="CVV"
                 name="cvv"
                 rules={[{ required: true, message: "Please input card cvv value!" }]}
               >
-                <InputNumber size="small" style={{ width: 200 }} />
+                <InputNumber size="small" style={{ width: 50 }} maxLength={3} />
               </Form.Item>
             </div>
           </div>

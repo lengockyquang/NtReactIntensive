@@ -47,21 +47,21 @@ function NavBar() {
             <a className="nav-item nav-link" href="#" onClick={() => navigate("/")}>About</a>
           </div>
         </div>
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" style={{ alignItems: 'flex-end', flexDirection: 'column' }}>
-          <ul class="navbar-nav ml-auto">
+        <div className="navbar-collapse collapse w-100 order-3 dual-collapse2" style={{ alignItems: 'flex-end', flexDirection: 'column' }}>
+          <ul className="navbar-nav ml-auto">
             {
               identityInfo.isAuthenticated ? (
                 <React.Fragment>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onClick={onOpenCartModal} >Cart({shoppingCart.cartItems.length})</a>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#" onClick={onOpenCartModal} >Cart({shoppingCart.cartItems.length})</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Hello {identityInfo.userName}</a>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">Hello {identityInfo.userName}</a>
                   </li>
                 </React.Fragment>
               ) : (
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onClick={() => navigate("/login")}>Login</a>
+                <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={() => navigate("/login")}>Login</a>
                 </li>
               )
             }
