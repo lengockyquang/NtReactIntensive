@@ -136,7 +136,7 @@ function Cart(props) {
                 { required: true, message: "Please input phone number!" },
               ]}
             >
-              <InputNumber size="small" style={{ width: 200 }} />
+              <Input size="small" style={{ width: 200 }} />
             </Form.Item>
             <Form.Item
               label="Address"
@@ -148,14 +148,12 @@ function Cart(props) {
             <Form.Item
               label="City"
               name="city"
-              rules={[{ required: true, message: "Please input city!" }]}
             >
               <Select allowClear size="small" style={{ width: 200 }} options={cityProvince.data.filter(x => x.level === "City")} />
             </Form.Item>
             <Form.Item
               label="Province"
               name="province"
-              rules={[{ required: true, message: "Please input province!" }]}
             >
               <Select allowClear size="small" style={{ width: 200 }} options={cityProvince.data.filter(x => x.level === "Province")} />
             </Form.Item>

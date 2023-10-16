@@ -10,8 +10,9 @@ import Login from './Login';
 import ApplicationModal from './ApplicationModal';
 import Cart from './Cart';
 import ProductList from './ProductList';
-import { Button, Dropdown } from 'antd';
+import { Dropdown } from 'antd';
 import { logout } from '../redux/identitySlice';
+import Profile from './Profile';
 
 
 
@@ -21,6 +22,7 @@ function NavBar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cartModalRef = useRef(null);
+  const profileModalRef = useRef(null);
 
   useEffect(() => {
     loadCartItemsFromLocalStorage();
@@ -34,7 +36,13 @@ function NavBar() {
   }
 
   const onOpenCartModal = () => {
+    if(shoppingCart.cartItems.length === 0)
+      return;
     cartModalRef.current.onOpen();
+  }
+
+  const onOpenProfile = () =>{
+    profileModalRef.current?.onOpen();
   }
 
   const onLogout = () =>{
@@ -43,18 +51,18 @@ function NavBar() {
 
   const items = [
     {
+      key: '2',
+      label: (
+        <a href="#" onClick={onOpenProfile} style={{ textDecoration: 'none' }}>
+          Profile
+        </a>
+      ),
+    }
+    ,{
       key: '1',
       label: (
         <a onClick={onLogout} href="#" style={{ textDecoration: 'none' }}>
           Logout
-        </a>
-      ),
-    },
-    {
-      key: '2',
-      label: (
-        <a href="#" style={{ textDecoration: 'none' }}>
-          Profile
         </a>
       ),
     }
@@ -110,6 +118,14 @@ function NavBar() {
         ref={cartModalRef}
         title='Checkout'
         content={<Cart />}
+        maskClosable={false}
+        width={1000}
+      />
+      <ApplicationModal
+        key={"profileModal"}
+        ref={profileModalRef}
+        title='Profile'
+        content={<Profile />}
         maskClosable={false}
         width={1000}
       />
