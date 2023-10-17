@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { shoppingCartSelector, identitySelector } from "../redux/selector";
 import { useDispatch, useSelector } from "react-redux";
 import useTable from "../hooks/useTable";
@@ -169,7 +169,7 @@ function Cart(props) {
                 name="cardNumber"
                 rules={[{ required: true, message: "Please input card number!" }]}
               >
-                <Input size="small" style={{ width: 200 }} />
+                <Input placeholder="Card number" size="small" style={{ width: 200 }} />
               </Form.Item>
               <Form.Item label="Expiry">
                 <Space.Compact>
@@ -195,7 +195,7 @@ function Cart(props) {
                 name="cvv"
                 rules={[{ required: true, message: "Please input card cvv value!" }]}
               >
-                <InputNumber size="small" style={{ width: 50 }} maxLength={3} />
+                <InputNumber placeholder="CVV" size="small" style={{ width: 50 }} maxLength={3} />
               </Form.Item>
             </div>
           </div>

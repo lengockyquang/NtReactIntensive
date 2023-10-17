@@ -13,6 +13,7 @@ import ProductList from './ProductList';
 import { Dropdown } from 'antd';
 import { logout } from '../redux/identitySlice';
 import Profile from './Profile';
+import About from './About';
 
 
 
@@ -78,7 +79,7 @@ function NavBar() {
           <div className="navbar-nav">
             <a className="nav-item nav-link active" href="#" onClick={() => navigate("/")}>Home</a>
             <a className="nav-item nav-link" href="#" onClick={() => navigate("/shop")}>Shop</a>
-            <a className="nav-item nav-link" href="#" onClick={() => navigate("/")}>About</a>
+            <a className="nav-item nav-link" href="#" onClick={() => navigate("/about")}>About</a>
           </div>
         </div>
         <div className="navbar-collapse collapse w-100 order-3 dual-collapse2" style={{ alignItems: 'flex-end', flexDirection: 'column' }}>
@@ -111,6 +112,7 @@ function NavBar() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/shop" element={<ProductList />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ApplicationModal
