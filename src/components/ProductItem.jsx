@@ -10,6 +10,7 @@ function ProductItem(props) {
   const identityInfo = useSelector(identitySelector);
 
   const addToCart = () => {
+    console.log(123);
     if(identityInfo.isAuthenticated === false)
     {
         notification.error({
@@ -18,6 +19,7 @@ function ProductItem(props) {
         })
     }
     else{
+      console.log(props);
       dispatch(setItem({
         id: props.id,
         name: props.name,

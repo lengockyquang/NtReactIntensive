@@ -14,7 +14,7 @@ import { Dropdown } from 'antd';
 import { logout } from '../redux/identitySlice';
 import Profile from './Profile';
 import About from './About';
-
+import products from '../data/products.json';
 
 
 function NavBar() {
@@ -111,7 +111,7 @@ function NavBar() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/shop" element={<ProductList />} />
+        <Route path="/shop" element={<ProductList products={products.data} />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
