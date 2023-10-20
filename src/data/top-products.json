@@ -1,0 +1,32 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "A300 ULTIMA PATROL",
+            "price": 1352.25,
+            "isSale": true,
+            "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/patrolTigerStripe.png"
+        },
+        {
+            "id": 2,
+            "name": "92XI",
+            "price": 2352.25,
+            "isSale": false,
+            "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/92xi.png"
+        },
+        {
+            "id": 3,
+            "name": "80X CHEETAH",
+            "price": 3352.25,
+            "isSale": false,
+            "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/80x.png"
+        },
+        {
+            "id": 4,
+            "name": "TOMCAT KALE SLUSHY",
+            "price": 4352.25,
+            "isSale": true,
+            "thumbnail": "https://marvel-b1-cdn.bc0a.com/f00000000269380/www.beretta.com/en-us/assets/39/7/kale.png"
+        }
+    ]
+}
