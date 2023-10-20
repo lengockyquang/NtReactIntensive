@@ -38,7 +38,7 @@ function Login() {
           name="userName"
           rules={[{ required: true, message: 'Please input your username!' }]}
         >
-          <Input style={{ width: 300 }} />
+          <Input style={{ width: 300 }} placeholder='Default: admin' />
         </Form.Item>
 
         <Form.Item
@@ -46,7 +46,7 @@ function Login() {
           name="password"
           rules={[{ required: true, message: 'Please input your password!' }]}
         >
-          <Input.Password style={{ width: 300 }} />
+          <Input.Password style={{ width: 300 }} placeholder='Default: password' />
         </Form.Item>
 
         <Form.Item name="rememberMe" valuePropName="checked" wrapperCol={{ offset: 4, span: 8 }}>
