@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Useful information for application testing:
+User account: admin / password
+CardNumber for success payment: 123456789  (other with declined)
+
 ## Available Scripts
 
 In the project directory, you can run:
