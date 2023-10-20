@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { shoppingCartSelector, identitySelector } from "../redux/selector";
 import { useDispatch, useSelector } from "react-redux";
 import useTable from "../hooks/useTable";
@@ -10,6 +10,7 @@ import { clear } from '../redux/shoppingCartSlice';
 
 function Cart(props) {
   const [form] = Form.useForm();
+  const [isPaid, setPaidStatus] = useState(false);
   const [messageApi, contextHolder] = message.useMessage();
   const shoppingCart = useSelector(shoppingCartSelector);
   const identityInfo = useSelector(identitySelector);
@@ -19,6 +20,14 @@ function Cart(props) {
   };
 
   const onPay = () => {
+    if(shoppingCart.cartItems.length === 0)
+    {
+      notification.error({
+        message:"Alert",
+        description:  "Please fill up your cart before pay"
+      });
+      return; 
+    }
     form.submit();
   };
 
@@ -27,6 +36,7 @@ function Cart(props) {
     if(values.cardNumber === "123456789")
     {
       messageApi.success("Payment approved!");
+      setPaidStatus(true);
       dispatch(clear());
       // render checkout success content
       // allow user to leave review by star
@@ -34,6 +44,7 @@ function Cart(props) {
     }
     else{
       messageApi.error("Payment declined!");
+      setPaidStatus(false);
     }
   };
 
@@ -86,7 +97,7 @@ function Cart(props) {
     },
   });
 
-  if(shoppingCart.cartItems.length === 0)
+  if(isPaid)
   {
     return (
       <div className="cart" style={{textAlign:"center"}}>

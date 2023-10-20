@@ -25,7 +25,7 @@ function ProductList(props) {
                         _.map(productByRow, (product, index)=>{
                           return (
                             <ProductItem
-                              id={index+1}
+                              id={"PL"+(index+1)}
                               key={`product-${index}`}
                               name={product.name}
                               isSale={product.isSale}
