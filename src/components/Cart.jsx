@@ -8,7 +8,7 @@ import cityProvince from '../data/city-province.json';
 import CartSummary from "./CartSummary";
 import { clear } from '../redux/shoppingCartSlice';
 
-function Cart(props) {
+function Cart() {
   const [form] = Form.useForm();
   const [isPaid, setPaidStatus] = useState(false);
   const [messageApi, contextHolder] = message.useMessage();
@@ -32,15 +32,11 @@ function Cart(props) {
   };
 
   const onSubmit = (values) => {
-    // generate order id
     if(values.cardNumber === "123456789")
     {
       messageApi.success("Payment approved!");
       setPaidStatus(true);
       dispatch(clear());
-      // render checkout success content
-      // allow user to leave review by star
-      // send the star and order id to backend 
     }
     else{
       messageApi.error("Payment declined!");
